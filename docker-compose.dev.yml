@@ -3,7 +3,6 @@ services:
   nginx:
     ports: 
       - "3000:80"
-      
   node-app:
     build:
       context: .
@@ -14,7 +13,7 @@ services:
       - /app/node_modules
     environment: 
       - NODE_ENV=development
-      - MONGO_USER=rashotech
-      - MONGO_PASSWORD=tunde4real
-      - SESSION_SECRET=retsydufioigyftdrnetyuiofidks75urjtikitxuzryet
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - SESSION_SECRET=${SESSION_SECRET}
     command: npm run dev
